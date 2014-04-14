@@ -149,7 +149,7 @@ sequence=raw_input("enter sequence ")
 print translate(sequence)
 
 #QUESTION6
-def createfasta(sequence, seqid):#receives a sequence(string) and an ID(string) and creates a string in fasta format where the ID is the content of the first line and the sequence is split into lines of maximum 60 characters
+def createfasta(filename):#receives a sequence(string) and an ID(string) and creates a string in fasta format where the ID is the content of the first line and the sequence is split into lines of maximum 60 characters
     filecreate=open("newfile.txt","w+")
     filecreate.write(">")
     filecreate.write(seqid,"\n")
