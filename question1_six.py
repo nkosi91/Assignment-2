@@ -148,16 +148,18 @@ sequence=raw_input("enter sequence ")
 print translate(sequence)
 
 #QUESTION6
-def createfasta(filename):#receives a sequence(string) and an ID(string) and creates a string in fasta format where the ID is the content of the first line and the sequence is split into lines of maximum 60 characters
+def getfasta(x,y):#receives a sequence(string) and an ID(string) and creates a string in fasta format where the ID is the content of the first line and the sequence is split into lines of maximum 60 characters
+    
     filecreate=open("newfile.txt","w+")
     filecreate.write(">")
-    filecreate.write(seqid,"\n")
-    for index in range(0,len(sequence),60):
-        filecreate.writelines(sequence[index],"\n")
+    filecreate.writelines([y,"\n"])
+    rangelist=range(0,len(x),60)
+    for index in rangelist:
+        filecreate.writelines([x[index:index+60],"\n"])
     filecreate.close()
     
     
     
 sequence=raw_input("enter sequence ")
-seqid=raw_input("enter sequence identity ")
-print createfasta(sequence,seqid) 
+seqid=raw_input("enter sequence identity ") 
+getfasta(sequence,seqid)
